@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidTool/AndroidProject/MyWeather/app/src/main/res/drawable/point_normal.xml" value="0.26564102564102565" />
+        <entry key="..\:/AndroidTool/AndroidProject/MyWeather/app/src/main/res/layout/activity_about.xml" value="0.17300724637681159" />
+        <entry key="..\:/AndroidTool/AndroidProject/MyWeather/app/src/main/res/layout/activity_add_weather.xml" value="0.17300724637681159" />
+        <entry key="..\:/AndroidTool/AndroidProject/MyWeather/app/src/main/res/layout/activity_detail.xml" value="0.17300724637681159" />
+        <entry key="..\:/AndroidTool/AndroidProject/MyWeather/app/src/main/res/layout/activity_loading.xml" value="0.17300724637681159" />
+        <entry key="..\:/AndroidTool/AndroidProject/MyWeather/app/src/main/res/layout/activity_main.xml" value="0.17300724637681159" />
+        <entry key="..\:/AndroidTool/AndroidProject/MyWeather/app/src/main/res/layout/activity_manage.xml" value="0.17300724637681159" />
+        <entry key="..\:/AndroidTool/AndroidProject/MyWeather/app/src/main/res/layout/fragment_home.xml" value="0.17300724637681159" />
+        <entry key="..\:/AndroidTool/AndroidProject/MyWeather/app/src/main/res/layout/item_listview.xml" value="0.17300724637681159" />
+        <entry key="..\:/AndroidTool/AndroidProject/MyWeather/app/src/main/res/layout/item_mydaigram.xml" value="0.17300724637681159" />
+        <entry key="..\:/AndroidTool/AndroidProject/MyWeather/app/src/main/res/layout/item_rv.xml" value="0.17300724637681159" />
+        <entry key="..\:/AndroidTool/AndroidProject/MyWeather/app/src/main/res/layout/popupwindow_list.xml" value="0.17300724637681159" />
+        <entry key="..\:/AndroidTool/AndroidProject/MyWeather/app/src/main/res/layout/toolbar_home.xml" value="0.17300724637681159" />
+        <entry key="..\:/AndroidTool/AndroidSDk/platforms/android-32/data/res/layout/simple_list_item_1.xml" value="0.17300724637681159" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="mypopwindow_anim_style">
+        <item name="android:windowEnterAnimation">@anim/anim_pop_out</item>
+        <item name="android:windowExitAnimation">@anim/anim_pop_in</item>
+    </style>
+    <style name="mypopwindow2_anim_style">
+        <item name="android:windowEnterAnimation">@anim/anim_pop2_out</item>
+        <item name="android:windowExitAnimation">@anim/anim_pop2_in</item>
+    </style>
+</resources>

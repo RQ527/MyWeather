@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.HomeFragment">
+
+    <ImageView
+        android:id="@+id/ll_fragment_weatherBackground"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:src="@drawable/sunny_bg1"
+        android:scaleType="centerCrop"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <com.example.myweather.view.MyScrollView
+        android:id="@+id/sc_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                app:cardBackgroundColor="@color/none"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/none"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:padding="2dp"
+                        android:src="@drawable/pm25" />
+
+                    <TextView
+                        android:id="@+id/tv_home_pm2.5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:gravity="center"
+                        android:text="无"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                app:cardBackgroundColor="@color/none"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:gravity="center"
+                        android:text="空气"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_home_air"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:gravity="center"
+                        android:text="无"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        tools:ignore="SmallSp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_fragment_top"
+                android:layout_width="match_parent"
+                android:layout_height="180dp">
+
+                <TextView
+                    android:id="@+id/tv_home_temp"
+                    android:layout_width="180dp"
+                    android:layout_height="117dp"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:text="-12"
+                    android:textColor="@color/white"
+                    android:textSize="100sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_home_weather"
+                    android:layout_width="76dp"
+                    android:layout_height="33dp"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:text="晴"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_home_minToMax"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_home_temp" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="71dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="16dp"
+                    android:text="℃"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/tv_home_temp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_home_minToMax"
+                    android:layout_width="93dp"
+                    android:layout_height="34dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="64dp"
+                    android:gravity="center_vertical"
+                    android:text="-95~15℃"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.663"
+                    app:layout_constraintStart_toStartOf="@+id/tv_home_temp"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_home_temp" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="能见度"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_home_visibility"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/tv_home_temp" />
+
+                <TextView
+                    android:id="@+id/tv_home_visibility"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="8km"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_home_temp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/tv_home_temp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.example.myweather.view.MyDiagram
+                android:id="@+id/md_home_show"
+                android:layout_width="match_parent"
+                android:layout_height="400dp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_fragment_windmill"
+                    android:layout_width="280dp"
+                    android:layout_height="280dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.495"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.103">
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="20dp"
+                        android:src="@drawable/windmill"
+                        tools:layout_editor_absoluteX="34dp"
+                        tools:layout_editor_absoluteY="-46dp" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_fragment_visibility"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="80dp"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.704"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="能见度"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/tv_fragment_visibility"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="0km" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_fragment_wind"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="170dp"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.653"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/tv_fragment_windDirection"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="风向"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/tv_fragment_windLevel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="风级" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_fragment_pressure"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="70dp"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.334"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="气压"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/tv_fragment_pressure"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1000hPa" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_fragment_humidity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="160dp"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.298"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="湿度"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/tv_fragment_humidity"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="98%" />
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cd_fragment_advice"
+                android:layout_width="320dp"
+                android:layout_height="280dp"
+                app:cardBackgroundColor="@color/none"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="10dp"
+                android:layout_gravity="center_horizontal">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/none"
+                    >
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.059"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:padding="20dp"
+                            android:src="@drawable/wear"
+                            tools:ignore="Suspicious0dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="穿衣"
+                            android:textColor="@color/gray"
+                            android:textSize="15sp"
+                            tools:ignore="Suspicious0dp" />
+
+                        <TextView
+                            android:id="@+id/tv_cardView_wear"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="无"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+                            tools:ignore="Suspicious0dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="@+id/linearLayout6"
+                        app:layout_constraintHorizontal_bias="0.892"
+                        app:layout_constraintStart_toStartOf="@+id/linearLayout6"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:padding="20dp"
+                            android:src="@drawable/wear"
+                            tools:ignore="Suspicious0dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="紫外线"
+                            android:textColor="@color/gray"
+                            android:textSize="15sp"
+                            tools:ignore="Suspicious0dp" />
+
+                        <TextView
+                            android:id="@+id/tv_cardView_rays"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="无"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+                            tools:ignore="Suspicious0dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.503"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:padding="20dp"
+                            android:src="@drawable/cold"
+                            tools:ignore="Suspicious0dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="感冒"
+                            android:textColor="@color/gray"
+                            android:textSize="15sp"
+                            tools:ignore="Suspicious0dp" />
+
+                        <TextView
+                            android:id="@+id/tv_cardView_cold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="无"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+                            tools:ignore="Suspicious0dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="@+id/linearLayout4"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.94"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/linearLayout4"
+                        app:layout_constraintVertical_bias="0.0">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:padding="20dp"
+                            android:src="@drawable/motion"
+                            tools:ignore="Suspicious0dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="运动"
+                            android:textColor="@color/gray"
+                            android:textSize="15sp"
+                            tools:ignore="Suspicious0dp" />
+
+                        <TextView
+                            android:id="@+id/tv_cardView_motion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="无"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+                            tools:ignore="Suspicious0dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:padding="20dp"
+                            android:src="@drawable/cleancar"
+                            tools:ignore="Suspicious0dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="洗车"
+                            android:textColor="@color/gray"
+                            android:textSize="15sp"
+                            tools:ignore="Suspicious0dp" />
+
+                        <TextView
+                            android:id="@+id/tv_cardView_cleanCar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="无"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+                            tools:ignore="Suspicious0dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/linearLayout"
+                        app:layout_constraintVertical_bias="0.0">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:padding="20dp"
+                            android:src="@drawable/lipstick"
+                            tools:ignore="Suspicious0dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="化妆"
+                            android:textColor="@color/gray"
+                            android:textSize="15sp"
+                            tools:ignore="Suspicious0dp" />
+
+                        <TextView
+                            android:id="@+id/tv_cardView_lipstick"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="无"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+                            tools:ignore="Suspicious0dp" />
+                    </LinearLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"/>
+
+        </LinearLayout>
+    </com.example.myweather.view.MyScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
